@@ -3,7 +3,7 @@
 + 공공데이터포털의 데이터를 활용
 [공공데이터포털][googlelink]
 
-[googlelink]: https://google.com "Go google"
+[googlelink]: https://www.data.go.kr/data/15076742/fileData.do "Go google"
 + 영등포의 식당정보를 이용
 + 버튼을 누르면 랜덤하게 식당을 추천
 + 리뷰와 별점 기능
