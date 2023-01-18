@@ -1,8 +1,26 @@
 const express = require('express');
+const path = require("path");
+const cors = require("cors");
+const routes = require('.//Router/routes');
+
 const app = express();
-const routes = require('./Router/routes');
+app.use(express.json());
+const PORT = process.env.PORT || 4000;
 
 app.use('/', routes);
 
-const port=4000;
-app.listen(port, ()=>{console.log(`Listening on port ${port}`)});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(
+    cors({
+      origin: true, // 출처 허용 옵션
+      credentials: true, // 사용자 인증이 필요한 리소스(쿠키 ..등) 접근
+      optionsSuccessStatus: 200,
+    })
+  );
+
+app.listen(PORT, () => {
+    console.log(`Check out the app at http://localhost:${PORT}`);
+});
+
