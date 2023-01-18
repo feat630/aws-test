@@ -1,7 +1,7 @@
 오늘 뭐먹지?
 ============
 + 공공데이터포털의 데이터를 활용
-[Google][googlelink]
+[공공데이터포털][googlelink]
 
 [googlelink]: https://google.com "Go google"
 + 영등포의 식당정보를 이용
