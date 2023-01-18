@@ -5,6 +5,6 @@
 
 스택
 ====
-*프론트: react.js
-*백엔드: node.js(가능하다면 Spring서버도)
-*DB: mariaDB
++ 프론트: react.js
++ 백엔드: node.js(가능하다면 Spring서버도)
++ DB: mariaDB
