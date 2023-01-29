@@ -3,8 +3,11 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Main from "./component/Main";
-import Home from "./component/Home";
+import Random from "./component/Random";
+import Login from './component/Login';
+
 import TopMenu from "./component/TopMenu";
+import Footer from './component/Footer';
 
 class App extends Component {
   state = { username: null };
@@ -16,9 +19,11 @@ class App extends Component {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Main />}></Route>
-            <Route path="/home" element={<Home />}></Route>
+            <Route path="/Random" element={<Random />}></Route>
+            <Route path="/login" element={<Login />}></Route>
           </Routes>
         </BrowserRouter>
+        <Footer/>
       </div>
     );
   }

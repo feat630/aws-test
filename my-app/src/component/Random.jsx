@@ -3,11 +3,12 @@ import React, { useEffect, useState } from "react";
 // import axios from "axios";
 
 export const Home = () => {
+    
+    const [name, setName] = useState();
 
     return (
         <>
-            <br/>
-            <h1>로그인창</h1>
+            <button>random</button>
         </>
     )
 
