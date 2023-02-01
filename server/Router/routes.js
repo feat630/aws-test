@@ -16,7 +16,7 @@ router.post("/getId", (req, res) => {
   //   }
   // });
 
-  write(req)
+  console.log(req.body.data.id)
 
 });
 

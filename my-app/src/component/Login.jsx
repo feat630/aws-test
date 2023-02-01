@@ -27,10 +27,10 @@ function Login() {
 	}
 
   const dataCheck = async() => {
-    const response = await axios.post('/login/check',{
-    data: {'data': [
+    const response = await axios.post('/getId',{
+    data: {
       id,
-      pw]
+      pw
     }
   }, { withCredentials: true });
       console.log(response.data[0])
