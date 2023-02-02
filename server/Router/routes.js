@@ -6,7 +6,7 @@ function rand(min, max) {
   return Math.floor(Math.random()*(max - min)) + min;
 }
 
-router.post("/getId", (req, res) => {
+router.post("/login", (req, res) => {
   // db.query("select * from res_table where res_id=143410;", (err, rows) => {
   //   if (!err) {
   //     res.send(rows);
