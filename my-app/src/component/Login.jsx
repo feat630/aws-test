@@ -27,7 +27,7 @@ function Login() {
 	}
 
   const dataCheck = async() => {
-    const response = await axios.post('/getId',{
+    const response = await axios.post('/login',{
     data: {
       id,
       pw
