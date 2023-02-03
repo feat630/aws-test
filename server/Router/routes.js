@@ -9,9 +9,27 @@ function rand(min, max) {
 router.post("/login", (req, res) => {
 
   const id = req.body.data.id;
-  const pw = req.body.data.pw
+  const pw = req.body.data.pw;
 
   db.query("select * from wet_user where ID=? and password=?;", [id, pw], (err, rows) => {
+    if (!err) {
+      res.send(rows);
+    } else {
+      console.log(`query error: ${err}`);
+      console.log(`중복된아이디`);
+      res.send(err);
+    }
+  });
+});
+
+router.post("/signin", (req, res) => {
+
+  const id = req.body.data.id;
+  const pw = req.body.data.pw;
+  const nickname = req.body.data.nickname;
+
+
+  db.query("insert into wet_user values (?, ?, ?);", [id, nickname, pw], (err, rows) => {
     if (!err) {
       res.send(rows);
     } else {

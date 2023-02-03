@@ -4,6 +4,7 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mariadb": "latest",
+    "memorystore": "^1.6.7",
     "mysql": "^2.18.1"
   }
 }
