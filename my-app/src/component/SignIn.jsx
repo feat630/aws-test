@@ -10,6 +10,7 @@ function SignIn() {
 
   const [id, setId] = useState();
   const [pw, setPw] = useState();
+  const [pwCheck, setPwCheck] = useState();
   const [nickname, setNickname] = useState();
 
   const getValue = (e) => {
@@ -20,14 +21,17 @@ function SignIn() {
 		} else if(name === 'nickname') {
       setNickname(value);
       console.log(value)
-    } else {
+    } else if(name === 'pwCheck') {
+			setPwCheck(value);
+      console.log(value)
+		} else {
 			setPw(value);
       console.log(value)
 		}
 	}
 
   const idCheck = async() => {
-    if(id==null||id==""){
+    if(id===null||id===""){
       alert("입력해주세요");
       return;
     }
@@ -37,7 +41,7 @@ function SignIn() {
     }
   }, { withCredentials: true });
       console.log(response.data)
-      if(response.data==true) {
+      if(response.data===true) {
           alert("사용가능한 아이디입니다");
           console.log("성공")
           // navigate("/");
@@ -49,7 +53,7 @@ function SignIn() {
   }
 
   const nickCheck = async() => {
-    if(nickname==null||nickname==""){
+    if(nickname===null||nickname===""){
       alert("입력해주세요");
       return;
     }
@@ -59,7 +63,7 @@ function SignIn() {
     }
   }, { withCredentials: true });
       console.log(response.data[0])
-      if(response.data==true) {
+      if(response.data===true) {
           alert("사용가능한 닉네임입니다");
           console.log("성공")
           // navigate("/");
@@ -71,19 +75,20 @@ function SignIn() {
   }
 
   const dataCheck = async() => {
-    const response = await axios.post('/login',{
+    const response = await axios.post('/signin',{
     data: {
       id,
-      pw
+      pw,
+      nickname
     }
   }, { withCredentials: true });
-      console.log(response.data[0])
-      if(response.data[0]==null) {
-          alert("아이디, 비밀번호가 틀렸습니다");
-          console.log("실패")
+      console.log(response.data)
+      if(response.data==true) {
+          alert("회원가입 성공");
+          console.log("회원가입 성공")
           // navigate("/");
       } else {
-          console.log("성공")
+          console.log("회원정보를 다시 확인해주세요")
           // window.location.href = 'http://localhost:3000/main';
       }
   }
@@ -105,14 +110,7 @@ function SignIn() {
           중복체크
         </Button>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Control className="pw-input"
-                    type='password'
-                    placeholder='pw'
-                    value={pw}
-                    onChange={getValue}
-                    name='pw' />
-      </Form.Group>
+
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Control className="nickname-input"
                     type='text'
@@ -124,11 +122,26 @@ function SignIn() {
       <Button variant="primary" onClick={() => {nickCheck()}}>
         중복체크
       </Button>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Control className="pw-input"
+                    type='password'
+                    placeholder='pw'
+                    value={pw}
+                    onChange={getValue}
+                    name='pw' />
       </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Control className="pwCheck-input"
+                    type='password'
+                    placeholder='pwCheck'
+                    value={pwCheck}
+                    onChange={getValue}
+                    name='pwCheck' />
+      </Form.Group>
+
       <Button variant="primary" onClick={() => {dataCheck()}}>
-        Login
+        회원가입
       </Button>
       <hr/>
       <a href="login">비밀번호 찾기</a>

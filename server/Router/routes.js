@@ -61,9 +61,9 @@ router.post("/signin", (req, res) => {
   const nickname = req.body.data.nickname;
 
 
-  db.query("insert into wet_user values (?, ?, ?);", [id, nickname, pw], (err, rows) => {
+  db.query("insert into wet_user(id, name, password) values (?, ?, ?);", [id, nickname, pw], (err, rows) => {
     if (!err) {
-      res.send(rows);
+      res.send(true);
     } else {
       console.log(`query error: ${err}`);
       res.send(err);
