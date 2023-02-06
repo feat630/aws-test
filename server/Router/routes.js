@@ -22,6 +22,38 @@ router.post("/login", (req, res) => {
   });
 });
 
+router.post("/duplId", (req, res) => {
+
+  const id = req.body.data.id;
+
+  db.query("select * from wet_user where ID=?;", [id], (err, rows) => {
+    console.log(rows);
+    if (rows[0]==null) {
+      console.log("사용가능")
+      res.send(true);
+    } else {
+      console.log("중복")
+      res.send(false);
+    }
+  });
+});
+
+router.post("/duplNick", (req, res) => {
+
+  const nickname = req.body.data.nickname;
+
+  db.query("select * from wet_user where name=?;", [nickname], (err, rows) => {
+    console.log(rows);
+    if (rows[0]==null) {
+      console.log("사용가능")
+      res.send(true);
+    } else {
+      console.log("중복")
+      res.send(false);
+    }
+  });
+});
+
 router.post("/signin", (req, res) => {
 
   const id = req.body.data.id;

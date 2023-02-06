@@ -12,22 +12,63 @@ function SignIn() {
   const [pw, setPw] = useState();
   const [nickname, setNickname] = useState();
 
-  const test = () => {
-    console.log("a")
-  }
-
   const getValue = (e) => {
 		const { name, value } = e.target;
     	if(name === 'id') {
 			setId(value);
       console.log(value)
-		} else if(name === 'Nickname') {
-
+		} else if(name === 'nickname') {
+      setNickname(value);
+      console.log(value)
     } else {
 			setPw(value);
       console.log(value)
 		}
 	}
+
+  const idCheck = async() => {
+    if(id==null||id==""){
+      alert("입력해주세요");
+      return;
+    }
+    const response = await axios.post('/duplId',{
+    data: {
+      id
+    }
+  }, { withCredentials: true });
+      console.log(response.data)
+      if(response.data==true) {
+          alert("사용가능한 아이디입니다");
+          console.log("성공")
+          // navigate("/");
+      } else {
+          alert("중복된 아이디입니다");
+          console.log("실패")
+          // window.location.href = 'http://localhost:3000/main';
+      }
+  }
+
+  const nickCheck = async() => {
+    if(nickname==null||nickname==""){
+      alert("입력해주세요");
+      return;
+    }
+    const response = await axios.post('/duplNick',{
+    data: {
+      nickname
+    }
+  }, { withCredentials: true });
+      console.log(response.data[0])
+      if(response.data==true) {
+          alert("사용가능한 닉네임입니다");
+          console.log("성공")
+          // navigate("/");
+      } else {
+          alert("중복된 닉네임입니다");
+          console.log("실패")
+          // window.location.href = 'http://localhost:3000/main';
+      }
+  }
 
   const dataCheck = async() => {
     const response = await axios.post('/login',{
@@ -60,6 +101,9 @@ function SignIn() {
                     value={id}
                     onChange={getValue}
                     name='id' />
+        <Button variant="primary" onClick={() => {idCheck()}}>
+          중복체크
+        </Button>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Control className="pw-input"
@@ -69,7 +113,17 @@ function SignIn() {
                     onChange={getValue}
                     name='pw' />
       </Form.Group>
-
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Control className="nickname-input"
+                    type='text'
+                    placeholder='nickname'
+                    value={nickname}
+                    onChange={getValue}
+                    name='nickname' />
+      </Form.Group>
+      <Button variant="primary" onClick={() => {nickCheck()}}>
+        중복체크
+      </Button>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
