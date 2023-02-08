@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import "./App.css";
 import 'bootstrap/dist/css/bootstrap.css';
 
 import Main from "./component/Main";
@@ -15,18 +16,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <>
         <TopMenu/>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Main />}></Route>
-            <Route path="/Random" element={<Random />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/signin" element={<SignIn />}></Route>
-          </Routes>
-        </BrowserRouter>
+        <div className="App">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Main />}></Route>
+              <Route path="/Random" element={<Random />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/signin" element={<SignIn />}></Route>
+            </Routes>
+          </BrowserRouter>
+        </div>
         <Footer/>
-      </div>
+      </>
     );
   }
 }

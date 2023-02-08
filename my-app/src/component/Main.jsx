@@ -25,7 +25,7 @@ export const Main = () => {
             <br/>
             <h1>환영합니다</h1>
             <h2>랜덤식당고르기</h2>
-            <Link to="/login"><button>로그인</button></Link><br/>
+            <Link to="/random">오늘 점심 고르기</Link><br/>
         </>
     )
 
