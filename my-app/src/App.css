@@ -1,8 +1,7 @@
 .App {
   text-align: center;
-  background-color: aliceblue;
-  padding: 70 0;
-  color:pink;
+  background-color: white;
+  padding: 0 200px;
 }
 
 .App-logo {
@@ -38,4 +37,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Map-css {
+  margin: auto;
 }

@@ -87,11 +87,28 @@ router.get("/getRand", (req, res) => {
   db.query("select * from res_table where res_id= ? ;", [id], (err, rows) => {
     if (!err) {
       res.send(rows);
+      console.log(rows);
     } else {
       console.log(`query error: ${err}`);
       res.send(err);
     }
   });
 });
+
+router.get("/getReview/:index", (req, res) => {
+  console.log(req.params.index);
+  const resIdd = req.params.index;
+  // const resId = 1;
+
+  db.query("select * from user_review where res_id = ?", [resIdd], (err, rows) => {
+    if(!err) {
+      res.send(rows);
+      // console.log(rows);
+    } else {
+      console.log(err)
+      // res.send(err);
+    }
+  })
+})
 
 module.exports = router;
