@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
-export const Review = () => {
+export const Input = () => {
 
     useEffect(() => {
         dataCheck();
@@ -41,4 +41,4 @@ export const Review = () => {
 
 }
 
-export default Review;
+export default Input;
