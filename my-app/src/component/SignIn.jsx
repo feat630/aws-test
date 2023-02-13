@@ -5,7 +5,7 @@ import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function SignIn() {
+export const SignIn = () => {
   let navigate = useNavigate();
 
   const [id, setId] = useState();
