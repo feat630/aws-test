@@ -12,17 +12,17 @@ export const TopMenu = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="random">Home</Nav.Link>
-                    <Nav.Link href="#link">Link</Nav.Link>
-                    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                    <Nav.Link href="random">랜덤식당고르기</Nav.Link>
+                    <Nav.Link href="#link">리뷰보러가기</Nav.Link>
+                    <NavDropdown title="마이페이지" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="#action/3.1">내가 쓴 리뷰보기</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">
-                        Another action
+                        개인정보 수정
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">로그아웃</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action/3.4">
-                        Separated link
+                        OOO님 반갑습니다
                     </NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
