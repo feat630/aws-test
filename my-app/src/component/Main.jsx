@@ -23,9 +23,11 @@ export const Main = () => {
     return (
         <>
             <br/>
-            <h1>환영합니다</h1>
-            <h2>랜덤식당고르기</h2>
+            <img src={`${process.env.PUBLIC_URL}/logoalphabet.png`} width="200" height="200"/>
+            <h1>오늘 뭐먹지?</h1>
             <Link to="/random">오늘 점심 고르기</Link><br/>
+            <h2>전체 식당리스트 보기</h2>
+            <h2>모든 리뷰 보기</h2>
         </>
     )
 
