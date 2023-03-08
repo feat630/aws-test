@@ -17,6 +17,6 @@
 ====
 + 프론트: react.js
 + 백엔드: node.js(가능하다면 JAVA로도 만들어보기)
-+ DB: mariaDB
++ DB: mariaDB(AWS RDS)
 + kakao map api
 + react-bootstrap
