@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Map, MapMarker } from 'react-kakao-maps-sdk';
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import axios from "axios";
 
 export const Home = () => {
 

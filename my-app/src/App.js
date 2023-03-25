@@ -28,7 +28,7 @@ class App extends Component {
               <Route path="/login" element={<Login />}></Route>
               <Route path="/signin" element={<SignIn />}></Route>
               <Route path="/review/:index" element={<Review />}></Route>
-              <Route path="/input/:index" element={<Review />}></Route>
+              <Route path="/input/:index" element={<Input />}></Route>
             </Routes>
           </BrowserRouter>
         </div>

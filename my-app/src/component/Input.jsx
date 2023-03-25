@@ -31,10 +31,11 @@ export const Input = () => {
             <br/>
             <h1>리뷰</h1>
             <h2>{ index }</h2>
+            <input value={index}></input>
             <h2>{ userId }</h2>
             <h2>{ review }</h2>
-            <Link to="/random">오늘 점심 고르기</Link><br/>
             <Link to="/random">리뷰작성</Link><br/>
+            <Link to="/">취소</Link><br/>
         </>
     )
 
